@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - winduu14</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/output.css"> <!-- Output CSS from Tailwind build -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        #sidebar {
+            height: auto;
+        }
+        @media (min-width: 768px) {
+            body {
+                flex-direction: row;
+            }
+            #sidebar {
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 h-full">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-full md:w-64 bg-white shadow-md p-4 flex-none">
+        <div class="flex items-center justify-between">
+            <h1 class="text-xl font-bold mb-4">College Archive</h1>
+            <button id="menu-button" class="md:hidden block focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <nav id="menu" class="md:block hidden">
+            <ul>
+                <li>
+                    <a href="index.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v14"></path>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="magang.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                        Magang
+                    </a>
+                </li>
+                <li>
+                    <a href="semester.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Semester
+                    </a>
+                </li>
+                <li>
+                    <a href="dokumentasi.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h10m-7 4h7"></path>
+                        </svg>
+                        Dokumentasi
+                    </a>
+                </li>
+                <li>
+                    <a href="portfolio.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01"></path>
+                        </svg>
+                        Portfolio
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 p-4">
+        <h2 class="text-2xl font-bold mb-4">Portfolio</h2>
+        <section class="mb-8 bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-2">Profil</h3>
+            <div class="flex items-center">
+                <img src="assets/images/profile.png" alt="Profile Picture" class="w-24 h-24 rounded-full mr-4">
+                <div>
+                    <p class="text-gray-700"><strong>Nama:</strong> Oki Windu Tanturi</p>
+                    <p class="text-gray-700"><strong>Email:</strong> Okiwindut14@gmail.com</p>
+                    <!-- Tambahkan informasi profil lainnya di sini -->
+                </div>
+            </div>
+        </section>
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Achievements</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="assets/images/achievement1.jpg" alt="Achievement 1" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h4 class="text-lg font-semibold">Appraisal</h4>
+                    <p class="text-gray-600">Deskripsi singkat tentang prestasi pertama.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="assets/images/achievement2.jpg" alt="Achievement 2" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h4 class="text-lg font-semibold">Achievement 2</h4>
+                    <p class="text-gray-600">Deskripsi singkat tentang prestasi kedua.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="assets/images/achievement3.jpg" alt="Achievement 3" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h4 class="text-lg font-semibold">Achievement 3</h4>
+                    <p class="text-gray-600">Deskripsi singkat tentang prestasi ketiga.</p>
+                </div>
+                <!-- Tambahkan lebih banyak card sesuai kebutuhan -->
+            </div>
+        </section>
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Showcase Karya</h3>
+            <iframe src="https://drive.google.com/file/d/1F8ts4nlHqDF5vHb9F3bP_X0L8q6XRTHx/preview" width="100%" height="480" allow="autoplay"></iframe>
+            <!-- Ganti ID_FILE_KARYA dengan ID file Google Drive Anda -->
+        </section>
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Pengalaman Kerja</h3>
+            <div class="relative">
+                <div class="border-l-2 border-gray-300 absolute h-full top-0 left-4"></div>
+                <ul class="list-none m-0 p-0">
+                    <li class="mb-8 ml-8">
+                        <div class="flex items-center mb-2">
+                            <img src="assets/images/logo1.png" alt="Company 1 Logo" class="w-10 h-10 rounded-full mr-4">
+                            <div class="text-gray-700 font-semibold">Shinergy</div>
+                        </div>
+                        <div class="text-gray-600 pl-16">
+                            <span class="font-semibold">Posisi:</span> Graphic Designer <br>
+                            <span class="font-semibold">Tahun:</span> 2024 - 2025
+                        </div>
+                    </li>
+                    <li class="mb-8 ml-8">
+                        <div class="flex items-center mb-2">
+                            <img src="assets/images/company2.png" alt="Company 2 Logo" class="w-12 h-12 rounded-full mr-4">
+                            <div class="text-gray-700 font-semibold">Company 2</div>
+                        </div>
+                        <div class="text-gray-600 pl-16">
+                            <span class="font-semibold">Posisi:</span> Full Stack Developer <br>
+                            <span class="font-semibold">Tahun:</span> 2018 - 2020
+                        </div>
+                    </li>
+                    <!-- Tambahkan lebih banyak pengalaman kerja sesuai kebutuhan -->
+                </ul>
+            </div>
+        </section>
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Skills</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex items-center">
+                    <img src="assets/images/skill1.png" alt="Skill 1 Logo" class="w-12 h-12 mr-4">
+                    <div>
+                        <h4 class="text-lg font-semibold">Skill 1</h4>
+                        <p class="text-gray-600">Deskripsi singkat tentang skill pertama.</p>
+                    </div>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex items-center">
+                    <img src="assets/images/skill2.png" alt="Skill 2 Logo" class="w-12 h-12 mr-4">
+                    <div>
+                        <h4 class="text-lg font-semibold">Skill 2</h4>
+                        <p class="text-gray-600">Deskripsi singkat tentang skill kedua.</p>
+                    </div>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex items-center">
+                    <img src="assets/images/skill3.png" alt="Skill 3 Logo" class="w-12 h-12 mr-4">
+                    <div>
+                        <h4 class="text-lg font-semibold">Skill 3</h4>
+                        <p class="text-gray-600">Deskripsi singkat tentang skill ketiga.</p>
+                    </div>
+                </div>
+                <!-- Tambahkan lebih banyak skill card sesuai kebutuhan -->
+            </div>
+        </section>
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Curriculum Vitae (CV)</h3>
+            <iframe src="https://drive.google.com/file/d/1EkG4JgbQGtMZVNqIyQ3siemXNhhYqQfP/preview" width="100%" height="480" allow="autoplay"></iframe>
+            <!-- Ganti ID_FILE_CV dengan ID file Google Drive Anda -->
+        </section>
+    </main>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        document.getElementById('menu-button').onclick = function() {
+            var menu = document.getElementById('menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        };
+    </script>
+</body>
+
+</html>

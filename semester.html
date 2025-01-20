@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester - College Archive</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/output.css"> <!-- Output CSS from Tailwind build -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        #sidebar {
+            height: auto;
+        }
+        @media (min-width: 768px) {
+            body {
+                flex-direction: row;
+            }
+            #sidebar {
+                height: 100%;
+            }
+        }
+        .card {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #e2e8f0; /* Border color */
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background-image: url('assets/images/a.jpeg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2; /* Transparency */
+            z-index: 0;
+        }
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 h-full">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-full md:w-64 bg-white shadow-md p-4 flex-none">
+        <div class="flex items-center justify-between">
+            <h1 class="text-xl font-bold mb-4">College Archive</h1>
+            <button id="menu-button" class="md:hidden block focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <nav id="menu" class="md:block hidden">
+            <ul>
+                <li>
+                    <a href="index.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v14"></path>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="magang.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                        Magang
+                    </a>
+                </li>
+                <li>
+                    <a href="semester.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Semester
+                    </a>
+                </li>
+                <li>
+                    <a href="dokumentasi.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h10m-7 4h7"></path>
+                        </svg>
+                        Dokumentasi
+                    </a>
+                </li>
+                <li>
+                    <a href="portfolio.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01"></path>
+                        </svg>
+                        Portfolio
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 p-4">
+        <h2 class="text-2xl font-bold mb-4">DAFTAR LIST SEMESTER </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Semester 1 -->
+            <a href="smt1.html" class="card block bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 text-center">
+                <div class="card-content">
+                    <div class="flex justify-center mb-2">
+                        <svg class="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Semester 1</h3>
+                </div>
+            </a>
+            <!-- Semester 2 -->
+            <a href="smt2.html" class="card block bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 text-center">
+                <div class="card-content">
+                    <div class="flex justify-center mb-2">
+                        <svg class="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Semester 2</h3>
+                </div>
+            </a>
+            <!-- Semester 3 -->
+            <a href="smt3.html" class="card block bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 text-center">
+                <div class="card-content">
+                    <div class="flex justify-center mb-2">
+                        <svg class="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Semester 3</h3>
+                </div>
+            </a>
+            <!-- Semester 4 -->
+            <a href="smt4.html" class="card block bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 text-center">
+                <div class="card-content">
+                    <div class="flex justify-center mb-2">
+                        <svg class="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Semester 4</h3>
+                </div>
+            </a>
+            <!-- Semester 5 -->
+            <a href="smt5.html" class="card block bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 text-center">
+                <div class="card-content">
+                    <div class="flex justify-center mb-2">
+                        <svg class="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Semester 5</h3>
+                </div>
+            </a>
+            <!-- Semester 6 -->
+            <a href="smt6.html" class="card block bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 text-center">
+                <div class="card-content">
+                    <div class="flex justify-center mb-2">
+                        <svg class="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Semester 6</h3>
+                </div>
+            </a>
+            <!-- Semester 7 -->
+            <a href="smt7.html" class="card block bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 text-center">
+                <div class="card-content">
+                    <div class="flex justify-center mb-2">
+                        <svg class="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Semester 7</h3>
+                </div>
+            </a>
+            <!-- Semester 8 -->
+            <a href="smt8.html" class="card block bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 text-center">
+                <div class="card-content">
+                    <div class="flex justify-center mb-2">
+                        <svg class="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Semester 8</h3>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        document.getElementById('menu-button').onclick = function() {
+            var menu = document.getElementById('menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        };
+    </script>
+</body>
+
+</html>

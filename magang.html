@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magang - College Archive</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/output.css"> <!-- Output CSS from Tailwind build -->
+</head>
+
+<body class="bg-gray-100 h-screen flex flex-col md:flex-row">
+    <!-- Sidebar -->
+    <aside class="w-full md:w-64 bg-white shadow-md p-4 md:h-screen flex-none">
+        <div class="flex items-center justify-between">
+            <h1 class="text-xl font-bold mb-4">College Archive</h1>
+            <button id="menu-button" class="md:hidden block focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <nav id="menu" class="md:block hidden">
+            <ul>
+                <li>
+                    <a href="index.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v14"></path>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="magang.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                        Magang
+                    </a>
+                </li>
+                <li>
+                    <a href="semester.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Semester
+                    </a>
+                </li>
+                <li>
+                    <a href="dokumentasi.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h10m-7 4h7"></path>
+                        </svg>
+                        Dokumentasi
+                    </a>
+                </li>
+                <li>
+                    <a href="portfolio.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01"></path>
+                        </svg>
+                        Portfolio
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 p-4">
+        <h2 class="text-2xl font-bold mb-4">Magang</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <a href="detail_perusahaan1.html" class="block bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
+                <div class="p-4">
+                    <div class="w-32 h-32 mx-auto mb-4">
+                        <img src="assets/images/logo1.png" alt="Logo Perusahaan 1" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 text-center">Shinergy</h3>
+                    <p class="text-gray-600 text-center">Associate Graphic Design</p>
+                    <span class="inline-block bg-blue-500 text-white text-sm px-2 py-1 rounded mt-2">Magang Mandiri</span>
+                </div>
+            </a>
+            <!-- Card 2 -->
+            <a href="detail_perusahaan2.html" class="block bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
+                <div class="p-4">
+                    <div class="w-32 h-32 mx-auto mb-4">
+                        <img src="assets/images/logo2.png" alt="Logo Perusahaan 2" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 text-center">Universitas Paramadina</h3>
+                    <p class="text-gray-600 text-center">Assistant Lecturer</p>
+                    <span class="inline-block bg-green-500 text-white text-sm px-2 py-1 rounded mt-2">Magang Universitas</span>
+                </div>
+            </a>
+            <!-- Card 3 -->
+            <a href="detail_perusahaan3.html" class="block bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
+                <div class="p-4">
+                    <div class="w-32 h-32 mx-auto mb-4">
+                        <img src="assets/images/logo3.png" alt="Logo Perusahaan 3" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 text-center">MSIB BATCH 6 STUDYCLE</h3>
+                    <p class="text-gray-600 text-center">2D/Illustrator</p>
+                    <span class="inline-block bg-yellow-500 text-white text-sm px-2 py-1 rounded mt-2">MBKM MSIB</span>
+                </div>
+            </a>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

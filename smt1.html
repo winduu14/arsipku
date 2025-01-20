@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester 1 - College Archive</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        #sidebar {
+            height: auto;
+        }
+        @media (min-width: 768px) {
+            body {
+                flex-direction: row;
+            }
+            #sidebar {
+                height: 100%;
+            }
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1;
+            color: #fff;
+            background-color: #1d4ed8;
+            border-radius: 0.25rem;
+        }
+        .badge-secondary {
+            background-color: #10b981;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 h-full">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-full md:w-64 bg-white shadow-md p-4 flex-none">
+        <div class="flex items-center justify-between">
+            <h1 class="text-xl font-bold mb-4">College Archive</h1>
+            <button id="menu-button" class="md:hidden block focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <nav id="menu" class="md:block hidden">
+            <ul>
+                <li>
+                    <a href="index.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v14"></path>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="magang.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                        Magang
+                    </a>
+                </li>
+                <li>
+                    <a href="semester.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Semester
+                    </a>
+                </li>
+                <li>
+                    <a href="dokumentasi.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h10m-7 4h7"></path>
+                        </svg>
+                        Dokumentasi
+                    </a>
+                </li>
+                <li>
+                    <a href="portfolio.html" class="flex items-center py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01"></path>
+                        </svg>
+                        Portfolio
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 p-4">
+        <h2 class="text-2xl font-bold mb-4">Semester 1</h2>
+        <!-- Search Bar -->
+        <div class="relative">
+            <input type="text" id="search-input" onkeyup="searchCourses()" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Cari mata kuliah...">
+            <svg class="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+        </div>
+        <div id="courses" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-4">
+            <!-- Mata Kuliah 1 -->
+            <div class="course relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+                <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1 flex justify-between items-center">
+                    <span class="text-sm font-medium text-slate-600">
+                        Mata Kuliah 1
+                    </span>
+                    <div class="badge">3 SKS</div>
+                </div>
+                <div class="p-4">
+                    <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+                        Pengenalan Komputer
+                    </h5>
+                    <p class="text-slate-600 leading-normal font-light">
+                        Deskripsi singkat tentang mata kuliah pertama.
+                    </p>
+                </div>
+                <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+                    <a href="https://drive.google.com/file/d/ID_FILE/preview" target="_blank" class="text-sm text-slate-600 font-medium">
+                        Lihat di Google Drive
+                    </a>
+                </div>
+            </div>
+            <!-- Mata Kuliah 2 -->
+            <div class="course relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+                <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1 flex justify-between items-center">
+                    <span class="text-sm font-medium text-slate-600">
+                        Mata Kuliah 2
+                    </span>
+                    <div class="badge badge-secondary">4 SKS</div>
+                </div>
+                <div class="p-4">
+                    <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+                        Matematika Dasar
+                    </h5>
+                    <p class="text-slate-600 leading-normal font-light">
+                        Deskripsi singkat tentang mata kuliah kedua.
+                    </p>
+                </div>
+                <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+                    <a href="https://drive.google.com/file/d/ID_FILE/preview" target="_blank" class="text-sm text-slate-600 font-medium">
+                        Lihat di Google Drive
+                    </a>
+                </div>
+            </div>
+            <!-- Mata Kuliah 3 -->
+            <div class="course relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+                <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1 flex justify-between items-center">
+                    <span class="text-sm font-medium text-slate-600">
+                        Mata Kuliah 3
+                    </span>
+                    <div class="badge">2 SKS</div>
+                </div>
+                <div class="p-4">
+                    <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+                        Bahasa Inggris
+                    </h5>
+                    <p class="text-slate-600 leading-normal font-light">
+                        Deskripsi singkat tentang mata kuliah ketiga.
+                    </p>
+                </div>
+                <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+                    <a href="https://drive.google.com/file/d/ID_FILE/preview" target="_blank" class="text-sm text-slate-600 font-medium">
+                        Lihat di Google Drive
+                    </a>
+                </div>
+            </div>
+            <!-- Mata Kuliah 4 -->
+            <div class="course relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+                <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1 flex justify-between items-center">
+                    <span class="text-sm font-medium text-slate-600">
+                        Mata Kuliah 1
+                    </span>
+                    <div class="badge">3 SKS</div>
+                </div>
+                <div class="p-4">
+                    <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+                        Pengenalan Komputer
+                    </h5>
+                    <p class="text-slate-600 leading-normal font-light">
+                        Deskripsi singkat tentang mata kuliah pertama.
+                    </p>
+                </div>
+                <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+                    <a href="https://drive.google.com/file/d/ID_FILE/preview" target="_blank" class="text-sm text-slate-600 font-medium">
+                        Lihat di Google Drive
+                    </a>
+                </div>
+            </div>
+            <!-- Mata Kuliah 5 -->
+            <div class="course relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+                <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1 flex justify-between items-center">
+                    <span class="text-sm font-medium text-slate-600">
+                        Mata Kuliah 2
+                    </span>
+                    <div class="badge badge-secondary">4 SKS</div>
+                </div>
+                <div class="p-4">
+                    <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+                        Matematika Dasar
+                    </h5>
+                    <p class="text-slate-600 leading-normal font-light">
+                        Deskripsi singkat tentang mata kuliah kedua.
+                    </p>
+                </div>
+                <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+                    <a href="https://drive.google.com/file/d/ID_FILE/preview" target="_blank" class="text-sm text-slate-600 font-medium">
+                        Lihat di Google Drive
+                    </a>
+                </div>
+            </div>
+            <!-- Mata Kuliah 6 -->
+            <div class="course relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+                <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1 flex justify-between items-center">
+                    <span class="text-sm font-medium text-slate-600">
+                        Mata Kuliah 1
+                    </span>
+                    <div class="badge">3 SKS</div>
+                </div>
+                <div class="p-4">
+                    <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+                        Pengenalan Komputer
+                    </h5>
+                    <p class="text-slate-600 leading-normal font-light">
+                        Deskripsi singkat tentang mata kuliah pertama.
+                    </p>
+                </div>
+                <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+                    <a href="https://drive.google.com/file/d/ID_FILE/preview" target="_blank" class="text-sm text-slate-600 font-medium">
+                        Lihat di Google Drive
+                    </a>
+                </div>
+            </div>
+            <!-- Mata Kuliah 7 -->
+            <div class="course relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+                <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1 flex justify-between items-center">
+                    <span class="text-sm font-medium text-slate-600">
+                        Mata Kuliah 2
+                    </span>
+                    <div class="badge badge-secondary">4 SKS</div>
+                </div>
+                <div class="p-4">
+                    <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+                        Matematika Dasar
+                    </h5>
+                    <p class="text-slate-600 leading-normal font-light">
+                        Deskripsi singkat tentang mata kuliah kedua.
+                    </p>
+                </div>
+                <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+                    <a href="https://drive.google.com/file/d/ID_FILE/preview" target="_blank" class="text-sm text-slate-600 font-medium">
+                        Lihat di Google Drive
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        document.getElementById('menu-button').onclick = function() {
+            var menu = document.getElementById('menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        };
+
+        function searchCourses() {
+            // Get the input field and filter value
+            var input = document.getElementById("search-input");
+            var filter = input.value.toLowerCase();
+            // Get all course cards
+            var courses = document.getElementsByClassName("course");
+            // Loop through all courses and hide those that don't match the search
+            for (var i = 0; i < courses.length; i++) {
+                var course = courses[i];
+                var title = course.getElementsByTagName("h5")[0].innerText.toLowerCase();
+                if (title.indexOf(filter) > -1) {
+                    course.style.display = "";
+                } else {
+                    course.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
